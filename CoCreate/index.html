@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collab — Find Creators. Build Together.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ░░ GRAIN OVERLAY ░░ -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ░░ NAVIGATION ░░ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#" onclick="showPage('home')">
+        <span class="logo-icon">◈</span> Collab
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
+        <li><a href="#" onclick="showPage('explore')" data-page="explore">Explore Creators</a></li>
+        <li><a href="#" onclick="showPage('board')" data-page="board">Collaboration Board</a></li>
+        <li><a href="#" onclick="showPage('post')" data-page="post">Post Project</a></li>
+        <li><a href="#" onclick="showPage('premium')" data-page="premium">Premium</a></li>
+        <li class="nav-auth">
+          <button class="btn-ghost" onclick="showAuthModal('login')">Login</button>
+          <button class="btn-primary" onclick="showAuthModal('signup')">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       PAGE: HOME / LANDING
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <main id="page-home" class="page active">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-bg-orb orb1"></div>
+      <div class="hero-bg-orb orb2"></div>
+      <div class="hero-bg-orb orb3"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span> 2,400+ active creators this week
+        </div>
+        <h1 class="hero-title">
+          Find Creators.<br />
+          <span class="title-accent">Build Projects.</span>
+        </h1>
+        <p class="hero-subtitle">
+          The platform where musicians meet lyricists, filmmakers find editors,
+          and writers discover their visual voice. No followers. Just collaboration.
+        </p>
+        <div class="hero-cta">
+          <button class="btn-primary btn-lg" onclick="showPage('explore')">
+            Explore Creators <span class="btn-arrow">→</span>
+          </button>
+          <button class="btn-outline btn-lg" onclick="showPage('post')">
+            Start a Collaboration
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">12k+</span>
+            <span class="stat-label">Creators</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">3.4k</span>
+            <span class="stat-label">Projects Born</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">89%</span>
+            <span class="stat-label">Match Rate</span>
+          </div>
+        </div>
+      </div>
+      <!-- Floating creator cards -->
+      <div class="hero-cards" aria-hidden="true">
+        <div class="float-card fc1">
+          <img src="https://i.pravatar.cc/48?img=11" alt="" />
+          <div>
+            <div class="fc-name">Aria Shen</div>
+            <div class="fc-role">Composer</div>
+          </div>
+          <span class="fc-badge available">Available</span>
+        </div>
+        <div class="float-card fc2">
+          <img src="https://i.pravatar.cc/48?img=47" alt="" />
+          <div>
+            <div class="fc-name">Luca Ferretti</div>
+            <div class="fc-role">Filmmaker</div>
+          </div>
+          <span class="fc-badge open">Open</span>
+        </div>
+        <div class="float-card fc3">
+          <img src="https://i.pravatar.cc/48?img=32" alt="" />
+          <div>
+            <div class="fc-name">Maya Torres</div>
+            <div class="fc-role">Lyricist</div>
+          </div>
+          <span class="fc-badge available">Available</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Process</span>
+          <h2 class="section-title">How Collab Works</h2>
+          <p class="section-sub">Three steps from idea to creation</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card" style="--delay: 0s">
+            <div class="step-num">01</div>
+            <div class="step-icon">✦</div>
+            <h3>Post a Project Idea</h3>
+            <p>Share what you're building — a film score, a poetry collection, a short film. Describe the collaborator you need.</p>
+          </div>
+          <div class="step-card" style="--delay: 0.1s">
+            <div class="step-num">02</div>
+            <div class="step-icon">◎</div>
+            <h3>Find Collaborators</h3>
+            <p>Browse creator profiles filtered by skill, genre, and location. Or let our smart matching surface the right people.</p>
+          </div>
+          <div class="step-card" style="--delay: 0.2s">
+            <div class="step-num">03</div>
+            <div class="step-icon">◈</div>
+            <h3>Build Together</h3>
+            <p>Connect, communicate, and create. Projects built on Collab reach further — and so do the careers behind them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Explore</span>
+          <h2 class="section-title">Every Kind of Creator</h2>
+        </div>
+        <div class="categories-grid">
+          <div class="cat-card" onclick="filterAndExplore('Musician')">
+            <div class="cat-emoji">🎵</div>
+            <div class="cat-name">Musician</div>
+            <div class="cat-count">1,840 creators</div>
+          </div>
+          <div class="cat-card" onclick="filterAndExplore('Writer')">
+            <div class="cat-emoji">✍️</div>
+            <div class="cat-name">Writer</div>
+            <div class="cat-count">1,220 creators</div>
+          </div>
+          <div class="cat-card" onclick="filterAndExplore('Filmmaker')">
+            <div class="cat-emoji">🎬</div>
+            <div class="cat-name">Filmmaker</div>
+            <div class="cat-count">980 creators</div>
+          </div>
+          <div class="cat-card" onclick="filterAndExplore('Designer')">
+            <div class="cat-emoji">🎨</div>
+            <div class="cat-name">Designer</div>
+            <div class="cat-count">1,460 creators</div>
+          </div>
+          <div class="cat-card" onclick="filterAndExplore('Editor')">
+            <div class="cat-emoji">✂️</div>
+            <div class="cat-name">Editor</div>
+            <div class="cat-count">730 creators</div>
+          </div>
+          <div class="cat-card cat-all" onclick="showPage('explore')">
+            <div class="cat-emoji">→</div>
+            <div class="cat-name">All Creators</div>
+            <div class="cat-count">Browse everyone</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED CREATORS -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Spotlight</span>
+          <h2 class="section-title">Featured This Week</h2>
+        </div>
+        <div class="creators-grid" id="featuredGrid"></div>
+        <div class="section-cta">
+          <button class="btn-outline" onclick="showPage('explore')">See All Creators →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Stories</span>
+          <h2 class="section-title">What Creators Say</h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"I found my music producer within 48 hours. We just released our EP on Spotify. Collab literally changed my creative life."</p>
+            <div class="testi-author">
+              <img src="https://i.pravatar.cc/40?img=20" alt="Priya Nair" />
+              <div>
+                <div class="author-name">Priya Nair</div>
+                <div class="author-role">Singer-Songwriter, Mumbai</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card testi-featured">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"As a filmmaker, finding the right composer felt impossible. On Collab I found someone whose vision matched mine perfectly. Our short film won a regional award."</p>
+            <div class="testi-author">
+              <img src="https://i.pravatar.cc/40?img=51" alt="James Okafor" />
+              <div>
+                <div class="author-name">James Okafor</div>
+                <div class="author-role">Director, Lagos</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"The collaboration board is incredible. I posted a request for a UI designer for my indie game and had 5 serious applications in a day."</p>
+            <div class="testi-author">
+              <img src="https://i.pravatar.cc/40?img=33" alt="Tomás Guerrero" />
+              <div>
+                <div class="author-name">Tomás Guerrero</div>
+                <div class="author-role">Indie Developer, Barcelona</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container">
+        <div class="cta-inner">
+          <div class="cta-bg-orb"></div>
+          <h2>Your next creative chapter<br/>starts with one connection.</h2>
+          <p>Join 12,000+ creators who've found their collaborators on Collab.</p>
+          <div class="cta-buttons">
+            <button class="btn-primary btn-lg" onclick="showAuthModal('signup')">Create Free Account</button>
+            <button class="btn-ghost btn-lg" onclick="showPage('board')">Browse Projects →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">◈ Collab</div>
+            <p>The platform for creators who build together. Find your collaborator. Make something real.</p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Twitter">𝕏</a>
+              <a href="#" aria-label="Instagram">◎</a>
+              <a href="#" aria-label="LinkedIn">in</a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>Platform</h4>
+            <ul>
+              <li><a href="#" onclick="showPage('explore')">Explore Creators</a></li>
+              <li><a href="#" onclick="showPage('board')">Collaboration Board</a></li>
+              <li><a href="#" onclick="showPage('post')">Post a Project</a></li>
+              <li><a href="#" onclick="showPage('premium')">Premium</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2025 Collab Inc. All rights reserved.</span>
+          <span>Made with ◈ for creators everywhere</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       PAGE: EXPLORE CREATORS
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <main id="page-explore" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1 class="page-title">Explore Creators</h1>
+        <p class="page-sub">Discover talented creators ready to collaborate on your next project</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Search & Filter Bar -->
+      <div class="filter-bar">
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input
+            type="text"
+            id="creatorSearch"
+            class="search-input"
+            placeholder="Search by name, skill, or role..."
+            oninput="filterCreators()"
+          />
+        </div>
+        <div class="filter-chips" id="filterChips">
+          <button class="chip active" onclick="setFilter('All')">All</button>
+          <button class="chip" onclick="setFilter('Musician')">🎵 Musician</button>
+          <button class="chip" onclick="setFilter('Writer')">✍️ Writer</button>
+          <button class="chip" onclick="setFilter('Filmmaker')">🎬 Filmmaker</button>
+          <button class="chip" onclick="setFilter('Designer')">🎨 Designer</button>
+          <button class="chip" onclick="setFilter('Editor')">✂️ Editor</button>
+        </div>
+        <div class="location-filter">
+          <select id="locationFilter" onchange="filterCreators()" class="select-input">
+            <option value="">All Locations</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="London">London</option>
+            <option value="New York">New York</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Lagos">Lagos</option>
+            <option value="Seoul">Seoul</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-meta" id="resultsMeta">Showing all creators</div>
+
+      <!-- Creator Cards Grid -->
+      <div class="creators-grid explore-grid" id="exploreGrid"></div>
+
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <div class="empty-icon">◎</div>
+        <h3>No creators found</h3>
+        <p>Try adjusting your search or filters</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       PAGE: CREATOR PROFILE
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <main id="page-profile" class="page">
+    <div class="container profile-container" id="profileContent">
+      <!-- Filled by JS -->
+    </div>
+  </main>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       PAGE: COLLABORATION BOARD
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <main id="page-board" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1 class="page-title">Collaboration Board</h1>
+        <p class="page-sub">Browse open projects looking for talented collaborators</p>
+        <button class="btn-primary" onclick="showPage('post')" style="margin-top:1rem;">
+          + Post Your Project
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="board-filter-bar">
+        <input type="text" id="boardSearch" class="search-input" placeholder="Search projects..." oninput="filterProjects()" />
+        <div class="filter-chips" id="boardFilterChips">
+          <button class="chip active" onclick="setBoardFilter('All')">All</button>
+          <button class="chip" onclick="setBoardFilter('Music')">Music</button>
+          <button class="chip" onclick="setBoardFilter('Film')">Film</button>
+          <button class="chip" onclick="setBoardFilter('Writing')">Writing</button>
+          <button class="chip" onclick="setBoardFilter('Design')">Design</button>
+          <button class="chip" onclick="setBoardFilter('Game')">Game</button>
+        </div>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </main>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       PAGE: POST COLLABORATION
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <main id="page-post" class="page">
+    <div class="page-header">
+      <div class="container">
+        <h1 class="page-title">Post a Project</h1>
+        <p class="page-sub">Share your vision and find the right collaborator</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="form-card">
+        <form id="postForm" onsubmit="submitProject(event)">
+          <div class="form-group">
+            <label>Project Title <span class="req">*</span></label>
+            <input type="text" id="projTitle" class="form-input" placeholder="e.g. Need a composer for short film" required />
+          </div>
+          <div class="form-group">
+            <label>Project Description <span class="req">*</span></label>
+            <textarea id="projDesc" class="form-input form-textarea" placeholder="Describe your project, your vision, and what you're looking for in a collaborator..." required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Creator Role Needed <span class="req">*</span></label>
+              <select id="projRole" class="form-input select-input" required>
+                <option value="">Select a role</option>
+                <option>Musician / Composer</option>
+                <option>Lyricist</option>
+                <option>Filmmaker / Director</option>
+                <option>Video Editor</option>
+                <option>Graphic Designer</option>
+                <option>Motion Designer</option>
+                <option>Writer / Poet</option>
+                <option>Animator</option>
+                <option>Sound Designer</option>
+                <option>Photographer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Project Category <span class="req">*</span></label>
+              <select id="projCat" class="form-input select-input" required>
+                <option value="">Select a category</option>
+                <option value="Music">Music</option>
+                <option value="Film">Film</option>
+                <option value="Writing">Writing</option>
+                <option value="Design">Design</option>
+                <option value="Game">Game</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tags (comma separated)</label>
+            <input type="text" id="projTags" class="form-input" placeholder="e.g. ambient, score, short film, experimental" />
+          </div>
+          <div class="form-group">
+            <label>Portfolio / Work Sample Link</label>
+            <input type="url" id="projPortfolio" class="form-input" placeholder="https://yourportfolio.com or YouTube link" />
+          </div>
+          <div class="form-group">
+            <label>Your Name <span class="req">*</span></label>
+            <input type="text" id="projAuthor" class="form-input" placeholder="Your display name" required />
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-primary btn-lg btn-full">
+              Publish Project ✦
+            </button>
+          </div>
+        </form>
+        <div id="postSuccess" class="post-success" style="display:none;">
+          <div class="success-icon">✦</div>
+          <h3>Project Posted!</h3>
+          <p>Your project is now live on the Collaboration Board.</p>
+          <button class="btn-primary" onclick="showPage('board')">View on Board →</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       PAGE: PREMIUM
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <main id="page-premium" class="page">
+    <div class="premium-hero">
+      <div class="hero-bg-orb orb1"></div>
+      <div class="hero-bg-orb orb2"></div>
+      <div class="container">
+        <span class="section-tag">Premium</span>
+        <h1 class="page-title" style="margin-top:0.5rem;">Unlock Your Full<br/><span class="title-accent">Creative Potential</span></h1>
+        <p class="page-sub">Get seen by more creators, match smarter, and track your growth.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Feature highlights -->
+      <div class="premium-features">
+        <div class="pf-item">
+          <span class="pf-icon">⚡</span>
+          <h4>Profile Boost</h4>
+          <p>Appear at the top of search results and category pages.</p>
+        </div>
+        <div class="pf-item">
+          <span class="pf-icon">◎</span>
+          <h4>Smart Matching</h4>
+          <p>Advanced algorithm surfaces collaborators based on style, genre, and work history.</p>
+        </div>
+        <div class="pf-item">
+          <span class="pf-icon">📊</span>
+          <h4>Creator Analytics</h4>
+          <p>Track profile views, collaboration requests, and project reach.</p>
+        </div>
+        <div class="pf-item">
+          <span class="pf-icon">✓</span>
+          <h4>Verified Badge</h4>
+          <p>Stand out as a verified creator. Build trust with potential collaborators.</p>
+        </div>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="section-header" style="margin-top:4rem;">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+      </div>
+      <div class="pricing-grid">
+        <!-- Free -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Free</h3>
+            <div class="price"><span class="price-num">₹0</span><span class="price-per">/month</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li class="feat-yes">Create a public profile</li>
+            <li class="feat-yes">Browse all creators</li>
+            <li class="feat-yes">Post up to 2 projects/month</li>
+            <li class="feat-yes">Apply to collaborations</li>
+            <li class="feat-no">Profile boost</li>
+            <li class="feat-no">Smart matching</li>
+            <li class="feat-no">Analytics</li>
+            <li class="feat-no">Verified badge</li>
+          </ul>
+          <button class="btn-outline btn-full" onclick="showAuthModal('signup')">Get Started Free</button>
+        </div>
+        <!-- Pro -->
+        <div class="pricing-card pricing-featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-header">
+            <h3>Pro</h3>
+            <div class="price"><span class="price-num">₹399</span><span class="price-per">/month</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li class="feat-yes">Everything in Free</li>
+            <li class="feat-yes">Profile boost (2×)</li>
+            <li class="feat-yes">Smart matching</li>
+            <li class="feat-yes">Unlimited projects</li>
+            <li class="feat-yes">Creator analytics</li>
+            <li class="feat-yes">Verified badge</li>
+            <li class="feat-yes">Priority support</li>
+            <li class="feat-no">Team collaboration</li>
+          </ul>
+          <button class="btn-primary btn-full" onclick="showAuthModal('signup')">Start 7-Day Free Trial</button>
+        </div>
+        <!-- Studio -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Studio</h3>
+            <div class="price"><span class="price-num">₹999</span><span class="price-per">/month</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li class="feat-yes">Everything in Pro</li>
+            <li class="feat-yes">Team workspace (5 seats)</li>
+            <li class="feat-yes">Profile boost (5×)</li>
+            <li class="feat-yes">Advanced analytics</li>
+            <li class="feat-yes">Custom profile URL</li>
+            <li class="feat-yes">API access</li>
+            <li class="feat-yes">Dedicated manager</li>
+            <li class="feat-yes">White-label proposals</li>
+          </ul>
+          <button class="btn-outline btn-full" onclick="showAuthModal('signup')">Contact Sales</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ░░ PROFILE MODAL ░░ -->
+  <div class="modal-overlay" id="profileModal" onclick="closeModal(event)">
+    <div class="modal-box" id="modalBox">
+      <button class="modal-close" onclick="closeProfileModal()">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ░░ AUTH MODAL ░░ -->
+  <div class="modal-overlay" id="authModal" onclick="closeAuthModal(event)">
+    <div class="modal-box auth-modal-box" id="authBox">
+      <button class="modal-close" onclick="document.getElementById('authModal').classList.remove('active')">✕</button>
+      <div class="auth-logo">◈ Collab</div>
+      <div id="authContent"></div>
+    </div>
+  </div>
+
+  <!-- ░░ TOAST ░░ -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
